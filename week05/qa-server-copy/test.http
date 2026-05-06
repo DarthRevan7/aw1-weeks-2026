@@ -1,0 +1,77 @@
+### Get all Questions
+GET http://localhost:3002/api/questions
+
+### Get a question by ID
+GET http://localhost:3002/api/questions/2
+
+### Get all answers
+GET http://localhost:3002/api/answers
+content-type: application/json
+
+### Get all answers of a given question
+GET http://localhost:3002/api/questions/1/answers
+content-type: application/json
+
+
+
+###
+POST http://localhost:3002/api/questions/2/answers
+content-type: application/json
+
+{
+  "text": "Last year, it had about 7700 first-timers.",
+  "author": {
+    "email": "luigi.derussis@polito.it",
+    "id": 1
+  },
+  "score": 0,
+  "date": "2026-03-15"
+}
+
+###
+
+PUT http://localhost:3002/api/answers/6
+content-type: application/json
+
+{
+  "text": "Last year, it had about 770 first-timers.",
+  "author": {
+    "email": "luigi.derussis@polito.it",
+    "id": 1
+  },
+  "score": 0,
+  "date": "2025-03-15"
+}
+
+###
+
+POST http://localhost:3002/api/answers/7/vote
+content-type: application/json
+
+{
+  "vote": "down"
+}
+
+###
+
+POST http://localhost:3002/api/sessions
+content-type: application/json
+
+{
+  "username": "luigi.derussis@polito.it",
+  "password": "password" 
+}
+
+###
+
+POST http://localhost:3002/api/sessions
+content-type: application/json
+
+{
+  "username": "luigi.derussis@polito.it",
+  "password": "wrong_password" 
+}
+
+###
+
+DELETE http://localhost:3002/api/sessions/current
